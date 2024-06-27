@@ -17,6 +17,7 @@ class PostView(ListCreateAPIView):
     serializer_class = PostSerializer
 
     def get_queryset(self):
+        print(self.request.query_params)
         return Post.objects.all()
     
     def create(self, request, *args, **kwargs):
